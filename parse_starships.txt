@@ -1,0 +1,8 @@
+url = "https://swapi.dev/api/starships/"
+
+JsonParser.fetch(url) do
+  get "results" 
+  where "passengers", :==, "0"
+  where "cargo_capacity", :>, "110"
+  get "name"
+end
